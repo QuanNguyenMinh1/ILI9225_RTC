@@ -51,10 +51,6 @@ SPI_HandleTypeDef hspi2;
 /* USER CODE BEGIN PV */
 uint8_t second_present, min_present, hour_present, date_present, month_present, year_present;
 uint8_t second_temp, min_temp, hour_temp, date_temp, month_temp, year_temp;
-char temperature_string[100];
-char humidity_string[100];
-float Temperature;
-float Humidity;
 char str1[100];
 char str2[100];
 /* USER CODE END PV */
@@ -395,16 +391,6 @@ button_init(&buttondown, GPIOA, GPIO_PIN_2);
 		  			 	  		  year_present = year_temp;
 		  			 	  	  }
 		  			  draw_string(40, 120, COLOR_BLACK, 1, str2);
-
-
-	      snprintf(temperature_string, 7, "%.2f", Temperature);
-	      snprintf(humidity_string, 7, "%.2f", Humidity);
-	      fill_rectangle(150, 20, 220, 50, COLOR_WHITE);
-	      draw_string(20, 20, COLOR_GOLD, 1, "TEMPERATURE");
-	      draw_string(20, 40, COLOR_GOLD, 1, "HUMIDITY");
-
-	      draw_string(150, 20, COLOR_BLUE, 1, temperature_string);
-		  draw_string(150, 40, COLOR_BLUE, 1, humidity_string);
   /* USER CODE END 3 */
 }
 
