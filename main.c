@@ -27,7 +27,6 @@
 #include <string.h>
 #include "RTC.h"
 #include "button.h"
-#include "DHT.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
