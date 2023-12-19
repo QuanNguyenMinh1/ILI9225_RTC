@@ -27,6 +27,7 @@
 #include <string.h>
 #include "RTC.h"
 #include "button.h"
+#include "DHT.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,6 +52,7 @@ SPI_HandleTypeDef hspi2;
 /* USER CODE BEGIN PV */
 uint8_t second_present, min_present, hour_present, date_present, month_present, year_present;
 uint8_t second_temp, min_temp, hour_temp, date_temp, month_temp, year_temp;
+uint8_t date_max;
 char str1[100];
 char str2[100];
 /* USER CODE END PV */
@@ -173,7 +175,7 @@ void btn_pressing_callback()
                 date_max = 29 + 1;
             }
             else
-            { 
+            {
                 date_max = 28 + 1;
             }
                 break;
@@ -202,7 +204,7 @@ void btn_pressing_callback()
             fill_rectangle(110, 100, 130, 110, COLOR_WHITE); // blink tại thông số "minute"
             if (button_x->GPIO_PIN = GPIO_PIN_1)
             {
-            temp_min --;
+            min_temp --;
             if (min_temp = -1)
             {
                 min_temp = 59;
@@ -248,7 +250,7 @@ void btn_pressing_callback()
                 date_max = 29 + 1;
             }
             else
-            { 
+            {
                 date_max = 28 + 1;
             }
                 break;
