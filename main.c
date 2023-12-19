@@ -27,6 +27,7 @@
 #include <string.h>
 #include "RTC.h"
 #include "button.h"
+#include "DHT.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -100,7 +101,7 @@ void btn_pressing_callback()
 		mode = CHINHNGAY; // gán mode = 3
 		break;
 	case CHINHNGAY:      // mode = 3
-  datetime_hour = hour_temp; //gán thời gian vừa cài đặt xong cho biến official (biến mà RTC sẽ tự động cập nhật)
+  datetime.hour = hour_temp; //gán thời gian vừa cài đặt xong cho biến official (biến mà RTC sẽ tự động cập nhật)
 		mode = BINHTHUONG; // gán mode = 0
 		break;
 	}
